@@ -1,0 +1,67 @@
+def Addition(x, y):
+    return x + y
+
+def Subtract(x, y):
+    return x - y
+
+def Multiply(x, y):
+    return x * y
+
+def Divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Cannot divide by zero"
+
+def inches_to_CM(inches):
+    return inches * 2.54
+
+def CM_to_inches(cm):
+    return cm / 2.54
+
+def Calculate_BMI(weight_kg, height_cm):
+    height_m = height_cm / 100
+    bmi = weight_kg / (height_m ** 2)
+    return bmi
+
+while True:
+    print("Calculator Menu:")
+    print("1. Addition")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Inches to Centimeters")
+    print("6. Centimeters to Inches")
+    print("7. Calculate BMI")
+    print("8. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == '8':
+        print("Exiting the calculator.")
+        break
+
+    if choice in ['1', '2', '3', '4']:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+
+        if choice == '1':
+            print("Result:", Addition(num1, num2))
+        elif choice == '2':
+            print("Result:", Subtract(num1, num2))
+        elif choice == '3':
+            print("Result:", Multiply(num1, num2))
+        elif choice == '4':
+            print("Result:", Divide(num1, num2))
+    elif choice == '5':
+        inches = float(input("Enter inches: "))
+        print("Centimeters:", inches_to_CM(inches))
+    elif choice == '6':
+        cm = float(input("Enter centimeters: "))
+        print("Inches:", CM_to_inches(cm))
+    elif choice == '7':
+        weight = float(input("Enter weight in kg: "))
+        height = float(input("Enter height in cm: "))
+        print("BMI:", calculate_BMI(weight, height))
+    else:
+        print("Invalid choice. Please select a valid option.")
